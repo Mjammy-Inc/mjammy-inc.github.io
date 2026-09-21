@@ -1,0 +1,132 @@
+/* Fælles design til alle support- og privacy-sider. Bruges af site/index.html og alle sider i site/<app>/.
+   Ingen eksterne skrifttyper eller scripts (det lover privacy-siderne). Lys og mørk tilstand følger telefonen. */
+
+:root {
+  color-scheme: light dark;
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --text: #1f2430;
+  --muted: #566073;
+  --line: #dfe2e8;
+  --accent: #3b5bdb;
+  --on-accent: #ffffff;
+  --todo-bg: #fff3bf;
+  --todo-text: #5c4400;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161a;
+    --surface: #1c1f26;
+    --text: #e8eaf0;
+    --muted: #a3abbb;
+    --line: #2d323c;
+    --accent: #91a7ff;
+    --on-accent: #14161a;
+    --todo-bg: #4a3d00;
+    --todo-text: #ffec99;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1.0625rem/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+}
+.skip:focus {
+  left: 12px;
+  top: 12px;
+  padding: 8px 12px;
+  background: var(--surface);
+  z-index: 10;
+}
+
+.site-header, main, footer {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px 24px;
+  padding-top: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+nav { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+nav a { padding: 8px 0; }
+nav [aria-current="page"] { font-weight: 700; text-decoration: none; }
+
+a { color: var(--accent); text-underline-offset: 3px; overflow-wrap: anywhere; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+main { padding-top: 32px; padding-bottom: 48px; }
+h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; }
+h2 { font-size: 1.25rem; line-height: 1.35; margin: 36px 0 8px; }
+p { margin: 10px 0; }
+.lead { color: var(--muted); font-size: 1.125rem; }
+
+.card {
+  margin: 28px 0;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.card h2 { margin-top: 0; }
+
+.button {
+  display: inline-block;
+  margin: 8px 0;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: 10px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.small { font-size: 0.9rem; color: var(--muted); }
+
+details { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 650; padding: 16px 2px; }
+details p { margin: 0 2px 18px; }
+
+.app-list { list-style: none; margin: 24px 0; padding: 0; }
+.app-list li { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.app-list strong { display: block; font-size: 1.125rem; }
+.app-list span { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+footer p { margin: 4px 0; }
+
+/* Gul markering af felter, der SKAL udfyldes, før siden må udgives. check.py stopper udgivelsen, hvis de findes. */
+.todo { background: var(--todo-bg); color: var(--todo-text); padding: 10px 14px; border-radius: 8px; }

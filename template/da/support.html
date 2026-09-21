@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support til {{APP_NAME}} · {{BRAND}}</title>
+<meta name="description" content="Hjælp og kontakt til {{APP_NAME}}.">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Gå til indhold</a>
+<header class="site-header">
+  <a class="brand" href="../index.html">{{APP_NAME}}</a>
+  <nav aria-label="Sider og sprog">
+    <a href="support.html" aria-current="page">Support</a>
+    <a href="privacy.html">Privatliv</a>
+    <a href="../en/support.html" lang="en" hreflang="en">English</a>
+  </nav>
+</header>
+<main id="main">
+  <h1>Hjælp til {{APP_NAME}}</h1>
+  <p class="todo">[UDFYLD: en eller to sætninger om, hvad appen gør, og hvem den er til.]</p>
+
+  <section class="card">
+    <h2>Kontakt</h2>
+    <p>Beskriv problemet og oplys gerne iPhone-model, iOS-version og appens version. Send kun skærmbilleder uden private oplysninger.</p>
+    <a class="button" href="mailto:{{SUPPORT_EMAIL}}?subject={{APP_NAME_URL}}%20support">Skriv til support</a>
+    <p class="small">{{SUPPORT_EMAIL}}</p>
+  </section>
+
+  <h2>Ofte stillede spørgsmål</h2>
+  <details>
+    <summary>[UDFYLD: første almindelige spørgsmål]</summary>
+    <p class="todo">[UDFYLD: svaret. Tilføj flere spørgsmål ved at kopiere denne blok.]</p>
+  </details>
+  <details>
+    <summary>Slet dine data</summary>
+    <p class="todo">[UDFYLD: præcis hvordan brugeren sletter sine data eller sin konto inde i appen. Har appen login, kræver Apple, at man kan slette kontoen i appen.]</p>
+  </details>
+</main>
+<footer>
+  <p><strong>{{BRAND}}</strong> · Udgiver: {{PUBLISHER}}</p>
+  <p><a href="mailto:{{SUPPORT_EMAIL}}">{{SUPPORT_EMAIL}}</a></p>
+</footer>
+</body>
+</html>
