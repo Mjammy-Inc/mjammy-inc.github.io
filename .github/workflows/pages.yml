@@ -1,10 +1,14 @@
 name: Check and deploy to Pages
 
 on:
-  push:
-    branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      publish:
+        description: "Udgiv supportsiderne efter godkendt slutreview"
+        type: boolean
+        required: true
+        default: false
 
 permissions:
   contents: read
@@ -23,7 +27,7 @@ jobs:
 
   deploy:
     needs: check
-    if: github.event_name != 'pull_request'
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.publish
     runs-on: ubuntu-latest
     permissions:
       contents: read
