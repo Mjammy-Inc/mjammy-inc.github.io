@@ -10,9 +10,11 @@ Appkode og tests hører i appens private kode-repo. Byggede apps opbevares i de 
 
 ## Status
 
-Kontrolleret 1. oktober 2026: repoet er offentligt, og hjemmesiden er tilgængelig. GitHub Actions gennemførte kontrol og Pages-deployment 30. september. Der er endnu ingen appmapper i `site/`; kontrollen gennemgik 0 apps.
+Historisk kontrol 1. oktober 2026: repoet var offentligt, og hjemmesiden var tilgængelig. GitHub Actions gennemførte kontrol og Pages-deployment 30. september. På det tidspunkt var der ingen appmapper i `site/`; kontrollen gennemgik 0 apps.
 
-Udgiver og standard support-e-mail i `tools/config.json` er endnu ikke udfyldt. De skal aftales eller angives eksplicit pr. app.
+Forberedt 5. oktober 2026: `site/packday/` indeholder en app-side samt support og privatliv på dansk og engelsk. Siderne er forberedt mod Packday 1.0.0 (TestFlight-build 3). `tools/config.json` angiver brandet MJAMMY, udgiveren Kristoffer Bjerregaard Bundgaard og den allerede offentlige supportadresse `kristoffer@bundgaards.net`. Denne status dokumenterer lokale filer; den er ikke bevis på udgivelse af Packday-siderne.
+
+De planlagte stabile adresser er `https://mjammy-inc.github.io/packday/` samt `packday/da/support.html`, `packday/da/privacy.html`, `packday/en/support.html` og `packday/en/privacy.html`. Efter udgivelse skal deres faktiske indhold og tilgængelighed kontrolleres før App Store-indsendelse.
 
 ## Ny app på 3 trin
 
@@ -33,3 +35,4 @@ Læs `CLAUDE.md` for reglerne, især at navne og adresser ikke må ændres efter
 cd site && python3 -m http.server 8000
 ```
 Åbn derefter http://localhost:8000 i en browser.
+
